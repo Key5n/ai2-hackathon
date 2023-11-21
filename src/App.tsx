@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { NextUIProvider } from "@nextui-org/react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { Grouping } from "./features/Grouping/Grouping";
+import { BasicLayout } from "./features/layouts/BasicLayout";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  const navigate = useNavigate();
+  return (
+    <NextUIProvider navigate={navigate}>
+      <BasicLayout>
+        <Routes>
+          <Route path="/" element={<Grouping />}></Route>
+        </Routes>
+      </BasicLayout>
+    </NextUIProvider>
+  );
 }
 
 export default App;
