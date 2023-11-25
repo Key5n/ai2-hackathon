@@ -14,5 +14,6 @@ export function useGroup() {
 async function fetcher(url: string): Promise<string[][]> {
   const result = await fetch(url);
   const json = (await result.json()) as string[][];
+
   return json;
 }

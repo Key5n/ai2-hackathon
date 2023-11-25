@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { User } from "../../types/User";
+import { User } from "../../../types/User";
 
 const baseUrl = import.meta.env.VITE_API_URL;
 

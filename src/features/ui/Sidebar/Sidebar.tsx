@@ -7,14 +7,14 @@ export function Sidebar() {
   const holding = groups.filter((group) => !group.isEnd);
   const end = groups.filter((group) => group.isEnd);
   return (
-    <div className="h-screen w-60 flex flex-col border-r p-2">
+    <div className="w-60 min-w-fit min-h-screen flex flex-col border-r p-2">
       <Accordion isCompact>
         <AccordionItem title="開催中">
           <ul>
             {holding.map((group) => {
               return (
                 <li key={group.id}>
-                  <SidebarItem link="/1">{group.name}</SidebarItem>
+                  <SidebarItem link={`/${group.id}`}>{group.name}</SidebarItem>
                 </li>
               );
             })}
@@ -27,13 +27,10 @@ export function Sidebar() {
             {end.map((group) => {
               return (
                 <li key={group.id}>
-                  <SidebarItem link="/1">{group.name}</SidebarItem>
+                  <SidebarItem link={`/${group.id}`}>{group.name}</SidebarItem>
                 </li>
               );
             })}
-            <li>
-              <SidebarItem link="/3">理系基礎演習</SidebarItem>
-            </li>
           </ul>
         </AccordionItem>
       </Accordion>
