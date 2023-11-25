@@ -15,6 +15,7 @@ export function Test() {
 
   async function handleClick() {
     const data = {
+      studentID: 25,
       progScore: 1,
       leadScore: 3,
       ideaScore: 5,
