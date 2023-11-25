@@ -1,12 +1,15 @@
 import { User as NextUiUser } from "@nextui-org/react";
-export function User() {
+type Props = {
+  userName: string;
+};
+export function User({ userName }: Props) {
   return (
     <NextUiUser
-      name="Jane Doe"
+      name={userName}
       description="Product Designer"
-      avatarProps={{
-        src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
-      }}
+      // avatarProps={{
+      //   src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+      // }}
     />
   );
 }

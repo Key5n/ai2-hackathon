@@ -1,11 +1,14 @@
 import { Group } from "./Group/Group";
+import { useGroup } from "./useGroup";
 
 export function Grouping() {
-  const numberOfGroups = 5;
+  const { groups } = useGroup();
+  console.log(groups);
+
   return (
-    <div>
-      {[...Array(numberOfGroups)].map((_, i) => (
-        <Group groupId={i} key={i} numberOfGroups={numberOfGroups} />
+    <div className="p-4">
+      {groups.map((group, i) => (
+        <Group groupName={group.name} key={i} userIds={group.members} />
       ))}
     </div>
   );

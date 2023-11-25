@@ -1,15 +1,10 @@
 import {
-  Button,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  User,
-  Image,
   Avatar,
 } from "@nextui-org/react";
-import { Link } from "react-router-dom";
-import { useUser } from "./useUser";
 
 export function NavigationBar() {
   // const { user } = useUser();
@@ -17,7 +12,7 @@ export function NavigationBar() {
     <div className="h-16 bg-gray-300">
       <Navbar>
         <NavbarBrand>
-          <p className="font-bold text-inherit">Grouping System</p>
+          <p className="font-bold-inherit">Grouping System</p>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem isActive></NavbarItem>
