@@ -10,7 +10,7 @@ export function Group({ groupName, userIds }: Props) {
       <div>{groupName}</div>
       <div className="flex gap-2 flex-wrap">
         {userIds.map((userId) => (
-          <User userName={userId} />
+          <User userId={userId} key={userId} />
         ))}
       </div>
     </div>

@@ -1,15 +1,24 @@
 import { User as NextUiUser } from "@nextui-org/react";
+import { useUser } from "./useUser";
 type Props = {
-  userName: string;
+  userId: string;
 };
-export function User({ userName }: Props) {
+export function User({ userId }: Props) {
+  const { user } = useUser(userId);
   return (
     <NextUiUser
-      name={userName}
-      description="Product Designer"
-      // avatarProps={{
-      //   src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
-      // }}
+      name={user.name}
+      description={
+        <div>
+          <div>{user.studentNumber}</div>
+          <div>プログラミング: {user.score.programming}</div>
+          <div>リーダー: {user.score.leader}</div>
+          <div>アイデア: {user.score.idea}</div>
+        </div>
+      }
+      avatarProps={{
+        size: "lg",
+      }}
     />
   );
 }

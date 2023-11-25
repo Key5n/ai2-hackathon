@@ -11,7 +11,12 @@ type Props = {
 export function SidebarItem({ link, children }: Props) {
   return (
     <div className="p-2">
-      <Link isBlock color="foreground" href={link} className="block">
+      <Link
+        isBlock
+        color="foreground"
+        href={`${link}/result`}
+        className="block"
+      >
         <div className="flex">
           <Flag />
           {children}
@@ -19,13 +24,23 @@ export function SidebarItem({ link, children }: Props) {
       </Link>
       <ul className="pl-4">
         <li className="py-2">
-          <Link isBlock color="foreground" href={link} className="flex">
+          <Link
+            isBlock
+            color="foreground"
+            href={`${link}/test`}
+            className="flex"
+          >
             <Task />
             能力テスト
           </Link>
         </li>
         <li>
-          <Link isBlock color="foreground" href={link} className="flex">
+          <Link
+            isBlock
+            color="foreground"
+            href={`${link}/result`}
+            className="flex"
+          >
             <TickCircle />
             結果
           </Link>
