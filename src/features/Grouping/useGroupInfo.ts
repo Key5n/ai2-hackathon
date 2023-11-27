@@ -5,6 +5,7 @@ const baseUrl = import.meta.env.VITE_API_URL;
 export function useGroupInfo(groupId: string) {
   const { data } = useSWR(`${baseUrl}/api/groups/${groupId}`, fetcher, {
     suspense: true,
+    refreshInterval: 500,
   });
   return { groupInfo: data };
 }

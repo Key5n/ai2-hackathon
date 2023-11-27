@@ -7,6 +7,7 @@ import { Success } from "./Success";
 
 export function Grouping() {
   const { classId } = useParams();
+
   if (classId === undefined) {
     throw new Error("error");
   }

@@ -5,9 +5,11 @@ type Props = {
 };
 export function User({ userId }: Props) {
   const { user } = useUser(userId);
+  const isMe = user.id === 25;
   return (
     <NextUiUser
       name={user.name}
+      className={`${isMe && " text-blue-600"}`}
       description={
         <div>
           <div>{user.studentNumber}</div>
